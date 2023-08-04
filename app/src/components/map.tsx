@@ -15,10 +15,11 @@ import Map, {
     useMap
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
+import axios from "axios";
 import Pin from './pin';
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoiYml0dG9yaW4iLCJhIjoiY2xrc3Q0Y2M3MDUwbzNybXl2dHlsNjh4MiJ9.9k9CGEqG0It-oPaM6ZwheQ";
-
+const fetchMapboxToken = (page:any) => axios.get('../api/mapbox')
+console.log(fetchMapboxToken)
 
 export default function MapView() {
 
@@ -45,7 +46,7 @@ export default function MapView() {
                     pitch: 30,
                 }}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
-                mapboxAccessToken={MAPBOX_TOKEN}
+                mapboxAccessToken={fetchMapboxToken}
                 maxZoom={3.2}
                 minPitch={30}
                 maxPitch={30}
