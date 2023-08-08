@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useMemo, useRef, useState} from 'react';
 import mapboxgl from 'mapbox-gl';
 import Map, { 
     AttributionControl, 
@@ -15,9 +15,10 @@ import Map, {
     useMap
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
+import cities from '../data/dao_list.json';
 import Pin from './pin';
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoiYml0dG9yaW4iLCJhIjoiY2xrc3Q0Y2M3MDUwbzNybXl2dHlsNjh4MiJ9.9k9CGEqG0It-oPaM6ZwheQ";
+const MAPBOX_TOKEN = "pk.eyJ1IjoiYml0dG9yaW4iLCJhIjoiY2xrdnl6bmxvMHQxMzNrcXRpcjNxbXEzcSJ9.IgFLq1EhdcwUTMPFRJo8JA";
 
 
 export default function MapView() {
@@ -34,6 +35,27 @@ export default function MapView() {
 
     // let userInteracting = false;
     // let spinEnabled = true;
+
+    const pins = useMemo(
+        () =>
+          cities.map((city, index) => (
+            <Marker
+              key={`marker-${index}`}
+              longitude={city.Longitude}
+              latitude={city.Latitude}
+              anchor="bottom"
+              onClick={e => {
+                // If we let the click event propagates to the map, it will immediately close the popup
+                // with `closeOnClick: true`
+                e.originalEvent.stopPropagation();
+                setPopupInfo(city);
+              }}
+            >
+              <Pin />
+            </Marker>
+          )),
+        []
+      );
 
     return (
         <MapProvider>
@@ -55,31 +77,21 @@ export default function MapView() {
                 projection={"globe"}
                 onLoad={handleLoad}
             >
-                <Marker key={1} longitude={-97} latitude={30} anchor="bottom" color="blue" onClick={() => setPopupInfo(true)}>
 
-                    
-                </Marker>
-                <Marker key={2} longitude={-101} latitude={31} anchor="bottom" color="blue">
-                    
-                </Marker>
+                {pins}
+
                 {popupInfo && (
-                        <Popup
-                            anchor="top"
-                            longitude={-97}
-                            latitude={30}
-                            onClose={() => setPopupInfo(null)}
-                        >
-                            <div>
-                            Austin, TX
-                            <a
-                                target="_new"
-                                href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=Austin,_Texas`}
-                            >
-                                Wikipedia
-                            </a>
-                            </div>
-                        </Popup>
-                    )}
+                    <Popup
+                        anchor="top"
+                        longitude={Number(popupInfo.Longitude)}
+                        latitude={Number(popupInfo.Latitude)}
+                        onClose={() => setPopupInfo(null)}
+                    >
+                        <div>
+                            {popupInfo.Name}
+                        </div>
+                    </Popup>
+                )}
             </Map>
         </MapProvider>
     )

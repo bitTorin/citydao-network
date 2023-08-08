@@ -1,0 +1,306 @@
+[
+    {
+      "Name": "ATX DAO",
+      "Twitter": "https://twitter.com/ATXDAO",
+      "Website": "https://www.atxdao.com/",
+      "City": "Austin, Texas",
+      "Longitude": -97.7436995,
+      "Latitude": 30.2711286
+    },
+    {
+      "Name": "The Boston DAO",
+      "Twitter": "https://twitter.com/TheBostonDAO",
+      "Website": "https://www.thebostondao.com/",
+      "City": "Boston, Massachusetts",
+      "Longitude": -71.060511,
+      "Latitude": 42.3554334
+    },
+    {
+      "Name": "404 DAO",
+      "Twitter": "https://twitter.com/404DAO",
+      "Website": "https://www.404dao.io/",
+      "City": "Atlanta, Georgia",
+      "Longitude": -84.3902644,
+      "Latitude": 33.7489924
+    },
+    {
+      "Name": "CityDAO",
+      "Twitter": "https://twitter.com/CityDAO",
+      "Website": "https://citydao.io",
+      "City": "Clark, Wyoming",
+      "Longitude": -109.1506661,
+      "Latitude": 44.8929964
+    },
+    {
+      "Name": "KC DAO",
+      "Twitter": "https://twitter.com/KansasCityDAO",
+      "Website": "",
+      "City": "Kansas City, Missouri ",
+      "Longitude": -94.5781416,
+      "Latitude": 39.100105
+    },
+    {
+      "Name": "Santa Fe NFT",
+      "Twitter": "https://twitter.com/SantaFeNFT",
+      "Website": "https://santafenft.io/",
+      "City": "Santa Fe, New Mexico",
+      "Longitude": -105.938456,
+      "Latitude": 35.6876096
+    },
+    {
+      "Name": "YVR DAO",
+      "Twitter": "https://twitter.com/yvrdao",
+      "Website": "https://yvrdao.com/",
+      "City": "Vancouver, Canada",
+      "Longitude": -123.113952,
+      "Latitude": 49.2608724
+    },
+    {
+      "Name": "LionCityDAO",
+      "Twitter": "https://twitter.com/LionCityDAO",
+      "Website": "",
+      "City": "Singapore",
+      "Longitude": 103.8519072,
+      "Latitude": 1.2899175
+    },
+    {
+      "Name": "DAOBrussels",
+      "Twitter": "https://twitter.com/daobrussels",
+      "Website": "https://dao.brussels/",
+      "City": "Brussels, Belgium",
+      "Longitude": 4.351697,
+      "Latitude": 50.8465573
+    },
+    {
+      "Name": "BairesDAO",
+      "Twitter": "https://twitter.com/bairesdao",
+      "Website": "",
+      "City": "Buenos Aires, Argentina",
+      "Longitude": -58.4370894,
+      "Latitude": -34.6075682
+    },
+    {
+      "Name": "The Nieux Society",
+      "Twitter": "https://twitter.com/NieuxSociety",
+      "Website": "https://www.nieux.xyz/",
+      "City": "New Orleans, Louisiana\n",
+      "Longitude": -90.0782127,
+      "Latitude": 29.9759983
+    },
+    {
+      "Name": "Tampa Bay DAO",
+      "Twitter": "https://twitter.com/tampabaydao",
+      "Website": "https://tampabaydao.com/",
+      "City": "Tampa Bay, Florida",
+      "Longitude": -82.458444,
+      "Latitude": 27.9477595
+    },
+    {
+      "Name": "IranDAO",
+      "Twitter": "https://twitter.com/iran__dao",
+      "Website": "https://www.irandao.xyz/",
+      "City": "Tehran, Iran",
+      "Longitude": 51.3896004,
+      "Latitude": 35.6892523
+    },
+    {
+      "Name": "Ukraine DAO",
+      "Twitter": "https://twitter.com/Ukraine_DAO",
+      "Website": "https://linktr.ee/ukrainedao",
+      "City": "Kiev, Ukraine",
+      "Longitude": 30.5241361,
+      "Latitude": 50.4500336
+    },
+    {
+      "Name": "DAO LA",
+      "Twitter": "https://twitter.com/dao_la_",
+      "Website": "https://linktr.ee/daola",
+      "City": "Los Angeles, California",
+      "Longitude": -118.242766,
+      "Latitude": 34.0536909
+    },
+    {
+      "Name": "CLT DAO",
+      "Twitter": "https://twitter.com/clt_dao",
+      "Website": "",
+      "City": "Charlotte, North Carolina",
+      "Longitude": -80.8430827,
+      "Latitude": 35.2272086
+    },
+    {
+      "Name": "ChicagoDAO",
+      "Twitter": "https://twitter.com/chicagodao_io",
+      "Website": "https://chicagodao.io/",
+      "City": "Chicago, Illinois",
+      "Longitude": -87.6244212,
+      "Latitude": 41.8755616
+    },
+    {
+      "Name": "Lisbon DAO",
+      "Twitter": "https://twitter.com/Lisbon_DAO",
+      "Website": "",
+      "City": "Lisbon, Portugal",
+      "Longitude": -9.1365919,
+      "Latitude": 38.7077507
+    },
+    {
+      "Name": "city3",
+      "Twitter": "https://twitter.com/0xcity3",
+      "Website": "",
+      "City": "Oakland, California",
+      "Longitude": -122.271356,
+      "Latitude": 37.8044557
+    },
+    {
+      "Name": "Miami DAO",
+      "Twitter": "https://twitter.com/MiamiDAO",
+      "Website": "",
+      "City": "Miami, Florida",
+      "Longitude": -80.19362,
+      "Latitude": 25.7741728
+    },
+    {
+      "Name": "BullCityDAO",
+      "Twitter": "https://bullcitydao.xyz/",
+      "Website": "",
+      "City": "Durham, North Carolina",
+      "Longitude": -78.9018053,
+      "Latitude": 35.996653
+    },
+    {
+      "Name": "DTX Collective",
+      "Twitter": "https://twitter.com/DTX_collective",
+      "Website": "",
+      "City": "Dallas, Texas",
+      "Longitude": -96.7968559,
+      "Latitude": 32.7762719
+    },
+    {
+      "Name": "NFTSYD",
+      "Twitter": "https://twitter.com/NFTSYD",
+      "Website": "https://linktr.ee/nftsydney",
+      "City": "Sydney, Australia",
+      "Longitude": 151.2082848,
+      "Latitude": -33.8698439
+    },
+    {
+      "Name": "NFTMELB",
+      "Twitter": "https://twitter.com/nftmelb",
+      "Website": "https://linktr.ee/nftmelb.io",
+      "City": "Melbourne, Australia",
+      "Longitude": 144.9631608,
+      "Latitude": -37.8142176
+    },
+    {
+      "Name": "DAOVOS",
+      "Twitter": "https://twitter.com/daovoz",
+      "Website": "https://daovoz.org/",
+      "City": "Davos, Switzerland",
+      "Longitude": 9.8236892,
+      "Latitude": 46.796198
+    },
+    {
+      "Name": "SojuDAO",
+      "Twitter": "https://twitter.com/sojudao_",
+      "Website": "https://link3.to/sojudao",
+      "City": "Seoul, Korea",
+      "Longitude": 126.9782914,
+      "Latitude": 37.5666791
+    },
+    {
+      "Name": "urbe.eth",
+      "Twitter": "https://twitter.com/urbeEth",
+      "Website": "https://linktr.ee/urbe.eth",
+      "City": "Rome, Italy",
+      "Longitude": 12.4829321,
+      "Latitude": 41.8933203
+    },
+    {
+      "Name": "NFTMKE",
+      "Twitter": "https://twitter.com/nft_mke",
+      "Website": "https://www.nftmke.io/",
+      "City": "Milwaukee, Wisconsin",
+      "Longitude": -87.922497,
+      "Latitude": 43.0349931
+    },
+    {
+      "Name": "Bu Zhi DAO",
+      "Twitter": "https://twitter.com/buzhidao_tw",
+      "Website": "https://link3.to/buzhidao",
+      "City": "Taipei, Taiwan",
+      "Longitude": 121.5636796,
+      "Latitude": 25.0375198
+    },
+    {
+      "Name": "AndinoDAO",
+      "Twitter": "https://twitter.com/andinodao",
+      "Website": "",
+      "City": "Lima, Peru",
+      "Longitude": -77.0365256,
+      "Latitude": -12.0621065
+    },
+    {
+      "Name": "Toronto DAO",
+      "Twitter": "https://twitter.com/toronto_dao",
+      "Website": "https://www.tdao.to/",
+      "City": "Toronto, Canada",
+      "Longitude": -79.3839347,
+      "Latitude": 43.6534817
+    },
+    {
+      "Name": "DAO TOKYO",
+      "Twitter": "https://twitter.com/DAO_TOKYO_XYZ",
+      "Website": "https://dao-tokyo.xyz/",
+      "City": "Tokyo, Japan",
+      "Longitude": 139.7594549,
+      "Latitude": 35.6828387
+    },
+    {
+      "Name": "Tulsa DAO",
+      "Twitter": "https://twitter.com/tulsadao",
+      "Website": "https://linktr.ee/tulsadao",
+      "City": "Tulsa, Oklahoma",
+      "Longitude": -95.9927436,
+      "Latitude": 36.1563122
+    },
+    {
+      "Name": "PDX DAO",
+      "Twitter": "https://twitter.com/PDXDAO",
+      "Website": "https://ethpdx.eth.limo/",
+      "City": "Portland, Oregon",
+      "Longitude": -122.674194,
+      "Latitude": 45.5202471
+    },
+    {
+      "Name": "Web3DC",
+      "Twitter": "https://twitter.com/Web3DC",
+      "Website": "https://www.web3dc.xyz/",
+      "City": "Washington, D.C.",
+      "Longitude": -77.0365427,
+      "Latitude": 38.8950368
+    },
+    {
+      "Name": "swissDAO",
+      "Twitter": "https://twitter.com/swissDAOspace",
+      "Website": "https://swissdao.space/",
+      "City": "Zurich, Switzerland",
+      "Longitude": 8.5410422,
+      "Latitude": 47.3744489
+    },
+    {
+      "Name": "CHS DAO",
+      "Twitter": "https://twitter.com/chsdao",
+      "Website": "",
+      "City": "Charleston, South Carolina",
+      "Longitude": -79.9402728,
+      "Latitude": 32.7876012
+    },
+    {
+      "Name": "San Diego DAO",
+      "Twitter": "https://twitter.com/tveeeeeeeeee",
+      "Website": "",
+      "City": "San Diego, California",
+      "Longitude": -117.1627728,
+      "Latitude": 32.7174202
+    }
+   ]
