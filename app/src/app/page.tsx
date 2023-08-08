@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import Link from 'next/link'
 
 // Dynamically import the Map component, { ssr: false } ensures it will only be loaded & rendered client-side
 const Map = dynamic(() => import('../components/map'), {
@@ -14,9 +15,9 @@ export default function Home() {
           citydao.network
         </p>
         <div className="flex">
-          <a className="fixed flex w-full text-black justify-center pb-2 pt-2 lg:static lg:w-auto lg:rounded-xl lg:p-2">
+          <Link className="fixed flex w-full text-black justify-center pb-2 pt-2 lg:static lg:w-auto lg:rounded-xl lg:p-2" href="/directory">
             directory
-          </a>
+          </Link>
           <a className="fixed flex w-full text-black justify-center pb-2 pt-2 lg:static lg:w-auto lg:rounded-xl lg:p-2" href="https://app.charmverse.io/citydaonetwork/page-19377272787222233" target="_blank">
             docs
           </a>
