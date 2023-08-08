@@ -1,10 +1,12 @@
+'use client'
+
 import { Separator } from "@/components/ui/separator"
  
 export function ListingItem(props) {
   return (
     <div>
       <div className="space-y-1">
-        <h4 className="text-sm font-medium leading-none">{props.Name}</h4>
+        <h4 className="text-sm font-medium leading-none black">{props.Name}</h4>
         <p className="text-sm text-muted-foreground">
           {props.City}
         </p>

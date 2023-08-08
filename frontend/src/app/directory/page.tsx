@@ -2,10 +2,10 @@
 
 import {useEffect, useMemo, useRef, useState} from 'react';
 
-import { ListingItem } from '@/components/listing';
-import cities from '../data/dao_list.json';
+import { ListingItem } from '@/app/directory/listing';
+import cities from '../../data/dao_list.json';
 
-export default function Directory() {
+export default function Page() {
 
     const entries = useMemo(
         () =>
