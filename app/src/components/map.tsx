@@ -67,7 +67,7 @@ export default function MapView() {
                     pitch: 30,
                 }}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
-                mapboxAccessToken={fetchMapboxToken}
+                mapboxAccessToken={MAPBOX_TOKEN}
                 maxZoom={3.2}
                 minPitch={30}
                 maxPitch={30}
