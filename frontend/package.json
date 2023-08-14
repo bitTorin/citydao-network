@@ -1,6 +1,12 @@
 {
   "name": "app",
   "version": "0.1.0",
+  "author": "bitTorin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitTorin/ETHDenver23.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'citydao.network',
-  description: 'a hub for local citydao communities',
+  description: 'Mapping every city DAO.',
 }
 
 export default function RootLayout({
