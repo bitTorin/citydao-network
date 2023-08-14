@@ -12,7 +12,8 @@ import Map, {
     NavigationControl,
     FullscreenControl,
     ScaleControl,
-    useMap
+    useMap,
+    LineLayer,
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
 import cities from '../data/dao_list.json';
@@ -43,11 +44,12 @@ export default function MapView() {
               key={`marker-${index}`}
               longitude={city.Longitude}
               latitude={city.Latitude}
-              anchor="bottom"
+              anchor="top"
               onClick={e => {
                 // If we let the click event propagates to the map, it will immediately close the popup
                 // with `closeOnClick: true`
                 e.originalEvent.stopPropagation();
+                reCenter(mapRef, {city.Longitude}, {city.Latitude});
                 setPopupInfo(city);
               }}
             >
@@ -55,7 +57,36 @@ export default function MapView() {
             </Marker>
           )),
         []
-      );
+    );
+
+    const animationLines: LineLayer = {
+        id: 'lineAnimation',
+        type: 'line',
+        source: 'line',
+        layout: {
+            'line-cap': 'round',
+            'line-join': 'round'
+        },
+        paint: {
+            'line-color': '#ed6498',
+            'line-width': 5,
+            'line-opacity': 0.8
+        },
+    };
+
+      // Create a GeoJSON source with an empty lineString.
+    const networkLines = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [[0, 0]]
+                }
+            }
+        ]
+    };
 
     return (
         <MapProvider>
@@ -68,7 +99,7 @@ export default function MapView() {
                 }}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
                 mapboxAccessToken={MAPBOX_TOKEN}
-                maxZoom={3.2}
+                maxZoom={3}
                 minPitch={30}
                 maxPitch={30}
                 antialias={true}
@@ -82,7 +113,7 @@ export default function MapView() {
 
                 {popupInfo && (
                     <Popup
-                        anchor="top"
+                        anchor="bottom"
                         longitude={Number(popupInfo.Longitude)}
                         latitude={Number(popupInfo.Latitude)}
                         onClose={() => setPopupInfo(null)}
@@ -92,6 +123,9 @@ export default function MapView() {
                         </div>
                     </Popup>
                 )}
+                <Layer>
+                    {/* {...animationLines} */}
+                </Layer>
             </Map>
         </MapProvider>
     )
@@ -115,3 +149,7 @@ export default function MapView() {
 //     map.easeTo({ center, duration: 1000, easing: (n) => n });
 //     }
 // }
+
+function reCenter(map, longitude, latitude) {
+    map.current.flyTo(longitude,latitude)
+}
