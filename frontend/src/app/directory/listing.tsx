@@ -2,7 +2,7 @@
 
 import { Separator } from "@/components/ui/separator"
  
-export function ListingItem(props) {
+export function ListingItem(props:any) {
   return (
     <div>
       <div className="space-y-1">

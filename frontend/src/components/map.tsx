@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import mapboxgl from 'mapbox-gl';
 import Map, { 
     AttributionControl, 
@@ -14,9 +14,10 @@ import Map, {
     ScaleControl,
     useMap,
     LineLayer,
+    Source,
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
-import cities from '../data/dao_list.json';
+import daos from '../data/dao_list.json';
 import Pin from './pin';
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYml0dG9yaW4iLCJhIjoiY2xrdnl6bmxvMHQxMzNrcXRpcjNxbXEzcSJ9.IgFLq1EhdcwUTMPFRJo8JA";
@@ -37,20 +38,28 @@ export default function MapView() {
     // let userInteracting = false;
     // let spinEnabled = true;
 
+    const initialViewState= {
+        longitude: -97.74076,
+        latitude: 30.26007,
+        zoom: 1,
+        pitch: 30,
+    }
+
     const pins = useMemo(
         () =>
-          cities.map((city, index) => (
+          daos.map((dao, index) => (
             <Marker
               key={`marker-${index}`}
-              longitude={city.Longitude}
-              latitude={city.Latitude}
-              anchor="top"
-              onClick={e => {
+              longitude={dao.Longitude}
+              latitude={dao.Latitude}
+              anchor="center"
+              onClick={(e) => {
                 // If we let the click event propagates to the map, it will immediately close the popup
                 // with `closeOnClick: true`
                 e.originalEvent.stopPropagation();
-                reCenter(mapRef, {city.Longitude}, {city.Latitude});
-                setPopupInfo(city);
+                console.log(dao.City);
+                reCenter(mapRef, dao.Longitude, dao.Latitude);
+                setPopupInfo(dao);
               }}
             >
               <Pin />
@@ -59,22 +68,7 @@ export default function MapView() {
         []
     );
 
-    const animationLines: LineLayer = {
-        id: 'lineAnimation',
-        type: 'line',
-        source: 'line',
-        layout: {
-            'line-cap': 'round',
-            'line-join': 'round'
-        },
-        paint: {
-            'line-color': '#ed6498',
-            'line-width': 5,
-            'line-opacity': 0.8
-        },
-    };
-
-      // Create a GeoJSON source with an empty lineString.
+    // Create a GeoJSON source with an empty lineString.
     const networkLines = {
         'type': 'FeatureCollection',
         'features': [
@@ -82,24 +76,45 @@ export default function MapView() {
                 'type': 'Feature',
                 'geometry': {
                     'type': 'LineString',
-                    'coordinates': [[0, 0]]
+                    'coordinates': [
+                        [-97.7436995,30.2711286],
+                        [-71.060511, 42.3554334]
+                    ]
                 }
             }
         ]
     };
 
+    const animationLines: LineLayer = {
+        id: 'lineAnimation',
+        type: 'line',
+        source: 'networkLines',
+        layout: {
+            'line-cap': 'round',
+            'line-join': 'round'
+        },
+        paint: {
+            'line-color': '#ffffff',
+            'line-width': 3,
+            'line-opacity': 0.8
+        },
+    };
+
+    const testLine = {
+        'type': 'Feature',
+        'geometry': {
+            'type': 'LineString',
+            'coordinates': [[-97.7436995,30.2711286],[-71.060511, 42.3554334]]
+        }
+    }
+
     return (
         <MapProvider>
             <Map 
-                initialViewState={{
-                    longitude: -97.74076,
-                    latitude: 30.26007,
-                    zoom: 1,
-                    pitch: 30,
-                }}
+                initialViewState={initialViewState}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
                 mapboxAccessToken={MAPBOX_TOKEN}
-                maxZoom={3}
+                maxZoom={3.2}
                 minPitch={30}
                 maxPitch={30}
                 antialias={true}
@@ -123,9 +138,23 @@ export default function MapView() {
                         </div>
                     </Popup>
                 )}
-                <Layer>
-                    {/* {...animationLines} */}
-                </Layer>
+                <Source id="polylineLayer" type="geojson" data={testLine}>
+                    <Layer 
+                        id= 'lineLayer'
+                        type= 'line'
+                        // source= 'networkLines'
+                        layout= {{
+                            'line-cap': 'round',
+                            'line-join': 'round'
+                        }}
+                        paint= {{
+                            'line-color': '#ffffff',
+                            'line-width': 2,
+                            'line-opacity': 0.8
+                        }}>
+                    </Layer>
+                </Source>
+                
             </Map>
         </MapProvider>
     )
@@ -150,6 +179,6 @@ export default function MapView() {
 //     }
 // }
 
-function reCenter(map, longitude, latitude) {
-    map.current.flyTo(longitude,latitude)
+function reCenter(map:any, longitude:number, latitude:number) {
+    map.current?.flyTo({center: [longitude, latitude], zoom: 3.2, duration: 2000});
 }
