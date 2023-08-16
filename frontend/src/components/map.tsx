@@ -108,9 +108,27 @@ export default function MapView() {
         }
     }
 
+    const testDot = {
+        'id': 'points',
+        'type': 'symbol',
+        'source': 'points',
+        'layout': {
+            'icon-image': 'pulsing-dot'
+        }
+    }
+
+    const pulseDot = {
+        'type': 'Feature',
+        'geometry': {
+            'type': 'circle',
+            'coordinates': [-110.911789,32.253460]
+        }
+    }
+
     return (
         <MapProvider>
-            <Map 
+            <Map
+                ref={mapRef}
                 initialViewState={initialViewState}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
                 mapboxAccessToken={MAPBOX_TOKEN}
@@ -138,6 +156,7 @@ export default function MapView() {
                         </div>
                     </Popup>
                 )}
+
                 <Source id="polylineLayer" type="geojson" data={testLine}>
                     <Layer 
                         id= 'lineLayer'
@@ -152,6 +171,11 @@ export default function MapView() {
                             'line-width': 2,
                             'line-opacity': 0.8
                         }}>
+                    </Layer>
+                </Source>
+                <Source id="dotLayer" type="geojson" data={pulseDot}>
+                    <Layer>
+                        {}
                     </Layer>
                 </Source>
                 
@@ -181,4 +205,39 @@ export default function MapView() {
 
 function reCenter(map:any, longitude:number, latitude:number) {
     map.current?.flyTo({center: [longitude, latitude], zoom: 3.2, duration: 2000});
+}
+
+function animateDot(mapRef) {
+    const duration = 1000;
+    const t = (performance.now() % duration) / duration;
+
+    const size = 200;
+    const dot = {
+        width: size,
+        height: size,
+        data: new Uint8Array(size * size * 4)
+    };
+    
+    const radius = (size / 2) * 0.3;
+    const outerRadius = (size / 2) * 0.7 * t + radius;
+    const context = mapRef.context;
+    
+    // Draw the outer circle.
+    context.clearRect(0, 0, this.width, this.height);
+    context.beginPath();
+    context.arc(this.width / 2,this.height / 2,outerRadius,0,Math.PI * 2);
+    context.fillStyle = `rgba(255, 200, 200, ${1 - t})`;
+    context.fill();
+    
+    // Draw the inner circle.
+    context.beginPath();
+    context.arc(this.width / 2,this.height / 2,radius,0,Math.PI * 2);
+    context.fillStyle = 'rgba(255, 100, 100, 1)';
+    context.strokeStyle = 'white';
+    context.lineWidth = 2 + 4 * (1 - t);
+    context.fill();
+    context.stroke();
+    
+    // Update this image's data with data from the canvas.
+    this.data = context.getImageData(0,0,this.width,this.heightx).data;
 }
