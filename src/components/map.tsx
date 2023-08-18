@@ -21,7 +21,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import daos from '../data/dao_list.json';
 import Pin from './pin';
 
-const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+const mapboxToken = process.env.TEST_TOKEN;
 
 
 export default function MapView() {
