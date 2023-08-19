@@ -104,3 +104,7 @@ a:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
+.mapboxgl-ctrl-logo {
+  display:none !important;
+}

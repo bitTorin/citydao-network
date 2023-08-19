@@ -17,9 +17,11 @@ import Map, {
     Source,
 } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
+import Link from 'next/link'
+import Router from 'next/router'
 
 import daos from '../data/dao_list.json';
-import Pin from './pin';
+import Pin from './ui/pin';
 
 const mapboxToken = process.env.TEST_TOKEN;
 
@@ -42,7 +44,7 @@ export default function MapView() {
     const initialViewState= {
         longitude: -97.74076,
         latitude: 30.26007,
-        zoom: 1,
+        zoom: 2,
         pitch: 30,
     }
 
@@ -59,7 +61,6 @@ export default function MapView() {
                 // If we let the click event propagates to the map, it will immediately close the popup
                 // with `closeOnClick: true`
                 e.originalEvent.stopPropagation();
-                console.log(dao.City);
                 reCenter(mapRef, dao.Longitude, dao.Latitude);
                 setPopupInfo(dao);
               }}
@@ -120,6 +121,7 @@ export default function MapView() {
                 minPitch={30}
                 maxPitch={30}
                 antialias={true}
+                attributionControl={false}
                 customAttribution={"<a href='/'>citydao.network</a>"}
                 hash={true}
                 projection={"globe"}
@@ -136,7 +138,7 @@ export default function MapView() {
                         onClose={() => setPopupInfo(null)}
                     >
                         <div>
-                            {popupInfo.Name}
+                            <Link href={`/directory#${popupInfo.ID}`} scroll={false}>{popupInfo.Name}</Link>
                         </div>
                     </Popup>
                 )}
