@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 
-const GlobeSpinner = ({ map, startRotation = true }) => {
+interface GlobeSpinnerProps {
+    map: any; 
+    startRotation?: boolean;
+}
+
+const GlobeSpinner: React.FC<GlobeSpinnerProps> = ({ map, startRotation = true }) => {
     const userInteractingRef = useRef(false);
     const spinEnabledRef = useRef(startRotation);
 
@@ -18,7 +23,7 @@ const GlobeSpinner = ({ map, startRotation = true }) => {
             }
             const center = map.getCenter();
             center.lng -= distancePerSecond;
-            map.easeTo({ center, duration: 1000, easing: (n) => n });
+            map.easeTo({ center, duration: 1000, easing: (n:any) => n });
         }
     };
 
@@ -57,7 +62,11 @@ const GlobeSpinner = ({ map, startRotation = true }) => {
         }
     };
 
+    return (
+        <div></div>
+    )
     
 };
+
 
 export default GlobeSpinner;
