@@ -120,7 +120,6 @@ export default function MapView() {
     return (
         <MapProvider>
             <Map
-                MapRef={mapRef}
                 initialViewState={initialViewState}
                 mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
                 mapboxAccessToken={mapboxToken}
