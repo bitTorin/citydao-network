@@ -130,7 +130,7 @@ export default function MapView() {
                 attributionControl={false}
                 customAttribution={"<a href='/'>citydao.network</a>"}
                 hash={true}
-                projection={"globe"}
+                projection={{name: 'globe'}}
                 onLoad={handleLoad}
             >
 
