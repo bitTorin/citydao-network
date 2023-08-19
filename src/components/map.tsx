@@ -23,6 +23,13 @@ import Router from 'next/router'
 import daos from '../data/dao_list.json';
 import Pin from './ui/pin';
 
+interface daoData {
+    ID: number;
+    Name: string;
+    Longitude: number;
+    Latitude: number;
+  }
+
 const mapboxToken = process.env.TEST_TOKEN;
 
 
@@ -36,7 +43,7 @@ export default function MapView() {
         
     };
 
-    const [popupInfo, setPopupInfo] = useState(null);
+    const [popupInfo, setPopupInfo] = useState<daoData | null>(null);
 
     // let userInteracting = false;
     // let spinEnabled = false;
