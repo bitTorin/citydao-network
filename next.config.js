@@ -4,7 +4,7 @@ const nextConfig = {}
 module.exports = {
     nextConfig,
     env: {
-        TEST_TOKEN: process.env.TOKEN,
+        MAPBOX_TOKEN: process.env.MAPBOX,
     },
     async rewrites() {
         return [

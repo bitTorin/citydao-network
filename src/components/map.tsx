@@ -30,7 +30,7 @@ interface daoData {
     Latitude: number;
   }
 
-const mapboxToken = process.env.TOKEN;
+const mapboxToken = process.env.MAPBOX_TOKEN;
 
 
 export default function MapView() {
