@@ -6,4 +6,12 @@ module.exports = {
     env: {
         TEST_TOKEN: process.env.TOKEN,
     },
+    async rewrites() {
+        return [
+          {
+            source: '/',
+            destination: 'https://api.mapbox.com/*',
+          },
+        ]
+      },
 };
