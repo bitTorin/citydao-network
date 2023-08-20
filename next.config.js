@@ -7,7 +7,7 @@ const nextConfig = {
                 source: "/api/*",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
-                    { key: "Access-Control-Allow-Origin", value: "https://citydao-network-a2xdrl5es-bittorin.vercel.app," }, // replace this your actual origin
+                    { key: "Access-Control-Allow-Origin", value: "https://citydao-network.vercel.app, https://citydao-network-bittorin.vercel.app/, https://citydao-network-git-main-bittorin.vercel.app/" },
                     { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT" },
                     { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
                 ]
