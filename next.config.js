@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             {
                 // matching all API routes
-                source: "/api/*",
+                source: "/",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     { key: "Access-Control-Allow-Origin", value: "https://citydao-network.vercel.app, https://citydao-network-bittorin.vercel.app/, https://citydao-network-git-main-bittorin.vercel.app/" },
