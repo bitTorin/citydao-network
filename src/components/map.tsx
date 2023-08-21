@@ -121,8 +121,7 @@ export default function MapView() {
         <MapProvider>
             <Map
                 initialViewState={initialViewState}
-                mapStyle={"mapbox://styles/mapbox/light-v11"}
-                //mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
+                mapStyle={"mapbox://styles/bittorin/clkspy3qe01vd01p589qx5c2h"}
                 mapboxAccessToken={mapboxToken}
                 maxZoom={3.2}
                 minPitch={30}
