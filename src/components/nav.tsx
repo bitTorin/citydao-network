@@ -14,7 +14,7 @@ export default function Nav() {
     return(
         <nav className="fixed relative flex w-full justify-between align-center bg-white px-24 py-8">
             <div className="flex flex-nowrap items-center">
-                <div className="flex-shrink-0 pr-2">
+                <div className="hidden md:block flex-shrink-0 pr-2">
                     <Image
                         className="h-10 w-10"
                         src={logo}
